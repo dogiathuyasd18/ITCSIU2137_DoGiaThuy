@@ -1,0 +1,353 @@
+/* Base Reset and Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #a3d8f4, #fceabb);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat;
+  height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .btn-primary {
+    background: linear-gradient(45deg, #f3a683, #f7d794);
+    padding: 16px 40px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 8px 20px rgba(243, 166, 131, 0.8);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover {
+      background: linear-gradient(45deg, #f7d794, #f3a683);
+      box-shadow: 0 12px 30px rgba(243, 166, 131, 1);
+    }
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 4rem 3rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2.section-title {
+    color: #3867d6;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* Destinations Grid */
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(243, 166, 131, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(243, 166, 131, 0.35);
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #f3a683;
+  }
+
+  .card-body {
+    padding: 1.2rem 1.5rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      color: #f19066;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    p {
+      color: #555;
+      flex-grow: 1;
+      font-size: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-secondary {
+      align-self: flex-start;
+      padding: 10px 28px;
+      background: #3867d6;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 7px 18px rgba(56, 103, 214, 0.7);
+      border: none;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #274fa3;
+      }
+    }
+  }
+}
+
+/* Popular Tours Flex */
+.tours {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-around;
+}
+
+.tour {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(243, 166, 131, 0.25);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(243, 166, 131, 0.35);
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #f3a683;
+  }
+
+  .tour-content {
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #3867d6;
+      font-weight: 800;
+    }
+
+    p {
+      flex-grow: 1;
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .price {
+      font-weight: 800;
+      color: #f19066;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      background: #f3a683;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(243, 166, 131, 0.6);
+      transition: background 0.3s ease;
+      text-transform: uppercase;
+      font-size: 1rem;
+
+      &:hover {
+        background: #f7d794;
+        color: #333;
+      }
+    }
+  }
+}
+
+/* Testimonials */
+.testimonials {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(243, 166, 131, 0.2);
+  padding: 2rem 3rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+  position: relative;
+
+  &::before {
+    content: "“";
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    color: #f7d794;
+    font-weight: 700;
+    opacity: 0.5;
+    font-family: serif;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  .author {
+    color: #f19066;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Footer */
+footer {
+  background: #3867d6;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  flex-shrink: 0;
+
+  p {
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+
+    a {
+      margin: 0 14px;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+        color: #f7d794;
+      }
+    }
+  }
+}
+
+/* Responsive for computer screen */
+@media (max-width: 1280px) {
+  section {
+    padding: 3rem 2rem 5rem;
+    max-width: 960px;
+  }
+
+  .destinations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tours {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .tour {
+    width: 42%;
+  }
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 2rem 1.5rem 4rem;
+    max-width: 720px;
+  }
+
+  .destinations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tour {
+    width: 100%;
+  }
+}

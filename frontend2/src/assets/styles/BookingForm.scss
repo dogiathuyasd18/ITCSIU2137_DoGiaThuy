@@ -1,0 +1,374 @@
+.booking-form-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .booking-form-content {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .error-message {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    form {
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .form-control {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border: 2px solid #e1e5e9;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+          }
+
+          &.error {
+            border-color: #dc3545;
+          }
+        }
+
+        textarea.form-control {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        .error-text {
+          color: #dc3545;
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+          display: block;
+        }
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .selected-tour-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 16px;
+        padding: 0;
+        margin-bottom: 2rem;
+        border: 2px solid #667eea;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        overflow: hidden;
+        animation: slideIn 0.5s ease-out;
+
+        .tour-header {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 1rem 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
+
+          .tour-status {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+        }
+
+        .tour-details {
+          padding: 1.5rem;
+
+          .tour-main-info {
+            margin-bottom: 1.5rem;
+
+            .tour-name {
+              color: #333;
+              margin-bottom: 0.5rem;
+              font-size: 1.4rem;
+              font-weight: 700;
+            }
+
+            .tour-category {
+              .category-badge {
+                background: #667eea;
+                color: white;
+                padding: 0.25rem 0.75rem;
+                border-radius: 15px;
+                font-size: 0.85rem;
+                font-weight: 500;
+              }
+            }
+          }
+
+          .tour-pricing {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e1e5e9;
+
+            .price-display {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .price-label {
+                color: #666;
+                font-size: 0.95rem;
+              }
+
+              .price-value {
+                color: #667eea;
+                font-size: 1.5rem;
+                font-weight: 700;
+              }
+            }
+          }
+
+          .tour-description {
+            margin-bottom: 1.5rem;
+
+            h5 {
+              color: #333;
+              margin-bottom: 0.5rem;
+              font-size: 1rem;
+              font-weight: 600;
+            }
+
+            p {
+              color: #555;
+              line-height: 1.6;
+              margin: 0;
+            }
+          }
+
+          .tour-features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            .feature-item {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              background: #fff;
+              padding: 0.5rem 1rem;
+              border-radius: 20px;
+              border: 1px solid #e1e5e9;
+              font-size: 0.9rem;
+              color: #555;
+
+              .feature-icon {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .price-summary-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 16px;
+        padding: 0;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        overflow: hidden;
+        animation: slideIn 0.5s ease-out;
+
+        .summary-header {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 1rem 1.5rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+          h4 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
+        }
+
+        .summary-details {
+          padding: 1.5rem;
+
+          .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+
+            .summary-label {
+              color: rgba(255, 255, 255, 0.9);
+              font-size: 0.95rem;
+            }
+
+            .summary-value {
+              color: white;
+              font-weight: 600;
+              font-size: 1rem;
+            }
+
+            &.total-row {
+              margin-top: 1rem;
+              padding-top: 1rem;
+              border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+              .total-label {
+                font-size: 1.1rem;
+                font-weight: 600;
+              }
+
+              .total-value {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #ffd700;
+              }
+            }
+          }
+
+          .summary-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0.5rem 0;
+          }
+        }
+
+        .summary-note {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 0.75rem 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+          small {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+          }
+        }
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        .btn {
+          padding: 0.75rem 2rem;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+          text-align: center;
+
+          &.btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+
+            &:hover:not(:disabled) {
+              transform: translateY(-2px);
+              box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            }
+
+            &:disabled {
+              opacity: 0.6;
+              cursor: not-allowed;
+            }
+          }
+
+          &.btn-secondary {
+            background: #6c757d;
+            color: white;
+
+            &:hover:not(:disabled) {
+              background: #5a6268;
+              transform: translateY(-2px);
+            }
+
+            &:disabled {
+              opacity: 0.6;
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+  }
+}
