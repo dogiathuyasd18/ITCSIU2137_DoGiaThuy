@@ -52,4 +52,3 @@ Both customer and admin users benefit from consistent navigation features. The h
 
 Troubleshooting and Support
 If you encounter login issues, verify your email and password, check your account status, and contact support if problems persist. For booking issues, verify product availability, check travel dates, and ensure your payment method is valid. For payment issues, verify your payment method, check transaction status, and contact support for refunds if needed. Admins experiencing access issues should verify their admin role, check permissions, and contact the system administrator if necessary.
-For additional assistance, consult this manual, contact support through the website, or email support@tourism-website.com. This manual covers the main features for both customer and admin users. For specific questions, refer to the relevant section or contact support.
