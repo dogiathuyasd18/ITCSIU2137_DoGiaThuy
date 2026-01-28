@@ -50,5 +50,3 @@ Product details can be updated in Admin → Update by selecting a product and mo
 Common Features and Navigation
 Both customer and admin users benefit from consistent navigation features. The header menu provides quick access to main sections, while admins have an additional sidebar for navigation. Breadcrumbs help track your location. Global search allows finding products quickly, with filter and sort options. The system displays success messages for completed actions, error messages for issues, and status updates for ongoing processes. The website is responsive and works on desktop, tablet, and mobile devices.
 
-Troubleshooting and Support
-If you encounter login issues, verify your email and password, check your account status, and contact support if problems persist. For booking issues, verify product availability, check travel dates, and ensure your payment method is valid. For payment issues, verify your payment method, check transaction status, and contact support for refunds if needed. Admins experiencing access issues should verify their admin role, check permissions, and contact the system administrator if necessary.
